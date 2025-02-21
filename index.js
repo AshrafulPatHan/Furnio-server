@@ -32,8 +32,12 @@ async function run() {
     await client.connect();
     // ----------this is strting point
 
+    // Database and collections
+    const main = client.db('Furniro');
+    const img_colection = main.collection('Images');
 
 
+    
     // -----------last point
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
