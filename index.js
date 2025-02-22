@@ -8,7 +8,7 @@ const port = 3000
 app.get('/', (req, res) => {
   res.send('The Server is runing!')
 })
-
+app.use(cors());
     // post a json data
     const image_json = [
       {
