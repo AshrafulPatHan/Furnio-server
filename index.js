@@ -13,7 +13,7 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
 
-
+app.use(express.json());
 
 const uri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASWORD}@cluster0.zxihh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
@@ -34,10 +34,48 @@ async function run() {
 
     // Database and collections
     const main = client.db('Furniro');
-    const img_colection = main.collection('Images');
+    const img_collection = main.collection('Images');
+
+    // i dont know
+    const image_json = [
+      {
+        "id": "1",
+        "Img": "https://i.ibb.co.com/Zz2YkWKp/Images-2.png"
+      },
+      {
+        "id": "2",
+        "Img": "https://i.ibb.co.com/QFKDhKHv/Images-1.png"
+      },
+      {
+        "id": "3",
+        "Img": "https://i.ibb.co.com/qYGhwcDJ/Images.png"
+      },
+      {
+        "id": "4",
+        "Img": "https://i.ibb.co.com/B270hzg1/image-8.png"
+      },
+      {
+        "id": "5",
+        "Img": "https://i.ibb.co.com/kszZ9X83/image-6.png"
+      },
+      {
+        "id": "6",
+        "Img": "https://i.ibb.co.com/dJB3wm1f/image-4.png"
+      },
+      {
+        "id": "7",
+        "Img": "https://i.ibb.co.com/tMw44yTw/image-1.png"
+      },
+      {
+        "id": "8",
+        "Img": "https://i.ibb.co.com/fz6bc4X9/bed-3804251-1920.jpg"
+      }
+    ];
+    app.get('/Image', (req, res) => {
+      res.send(image_json)
+    })
 
 
-    
     // -----------last point
     // Send a ping to confirm a successful connection
     await client.db("admin").command({ ping: 1 });
