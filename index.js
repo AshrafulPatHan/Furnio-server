@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
         "Img": "https://i.ibb.co.com/fz6bc4X9/bed-3804251-1920.jpg"
       }
     ];
-    app.get('/Image', (req, res) => {
+    app.get('/image', (req, res) => {
       res.send(image_json)
     })
 
