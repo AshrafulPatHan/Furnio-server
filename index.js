@@ -13,35 +13,51 @@ app.use(cors());
     const image_json = [
       {
         "id": "1",
-        "Img": "https://i.ibb.co.com/Zz2YkWKp/Images-2.png"
+        "Img": "https://i.ibb.co.com/Zz2YkWKp/Images-2.png",
+        "price":"1500",
+        "name":"lorem-Prod"
       },
       {
         "id": "2",
-        "Img": "https://i.ibb.co.com/QFKDhKHv/Images-1.png"
+        "Img": "https://i.ibb.co.com/QFKDhKHv/Images-1.png",
+        "price":"2500",
+        "name":"lorem-Prod"
       },
       {
         "id": "3",
-        "Img": "https://i.ibb.co.com/qYGhwcDJ/Images.png"
+        "Img": "https://i.ibb.co.com/qYGhwcDJ/Images.png",
+        "price":"1200",
+        "name":"lorem-Prod"
       },
       {
         "id": "4",
-        "Img": "https://i.ibb.co.com/B270hzg1/image-8.png"
+        "Img": "https://i.ibb.co.com/B270hzg1/image-8.png",
+        "price":"1000",
+        "name":"lorem-Prod"
       },
       {
         "id": "5",
-        "Img": "https://i.ibb.co.com/kszZ9X83/image-6.png"
+        "Img": "https://i.ibb.co.com/kszZ9X83/image-6.png",
+        "price":"1100",
+        "name":"lorem-Prod"
       },
       {
         "id": "6",
-        "Img": "https://i.ibb.co.com/dJB3wm1f/image-4.png"
+        "Img": "https://i.ibb.co.com/dJB3wm1f/image-4.png",
+        "price":"1400",
+        "name":"lorem-Prod"
       },
       {
         "id": "7",
-        "Img": "https://i.ibb.co.com/tMw44yTw/image-1.png"
+        "Img": "https://i.ibb.co.com/tMw44yTw/image-1.png",
+        "price":"2000",
+        "name":"lorem-Prod"
       },
       {
         "id": "8",
-        "Img": "https://i.ibb.co.com/fz6bc4X9/bed-3804251-1920.jpg"
+        "Img": "https://i.ibb.co.com/fz6bc4X9/bed-3804251-1920.jpg",
+        "price":"1800",
+        "name":"lorem-Prod"
       }
     ];
     app.get('/image', (req, res) => {
