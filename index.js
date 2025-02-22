@@ -9,34 +9,7 @@ app.get('/', (req, res) => {
   res.send('The Server is runing!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
-
-app.use(express.json());
-
-const uri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASWORD}@cluster0.zxihh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
-
-// Create a MongoClient with a MongoClientOptions object to set the Stable API version
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }
-});
-
-async function run() {
-  try {
-    // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
-    // ----------this is strting point
-
-    // Database and collections
-    const main = client.db('Furniro');
-    const img_collection = main.collection('Images');
-
-    // i dont know
+    // post a json data
     const image_json = [
       {
         "id": "1",
@@ -74,6 +47,35 @@ async function run() {
     app.get('/Image', (req, res) => {
       res.send(image_json)
     })
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
+app.use(express.json());
+
+const uri = `mongodb+srv://${process.env.DB_NAME}:${process.env.DB_PASWORD}@cluster0.zxihh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+
+// Create a MongoClient with a MongoClientOptions object to set the Stable API version
+const client = new MongoClient(uri, {
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }
+});
+
+async function run() {
+  try {
+    // Connect the client to the server	(optional starting in v4.7)
+    await client.connect();
+    // ----------this is strting point
+
+    // Database and collections
+    const main = client.db('Furniro');
+    const img_collection = main.collection('Images');
+
+
 
 
     // -----------last point
