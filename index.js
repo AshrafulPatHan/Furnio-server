@@ -71,7 +71,7 @@ app.post('/register', async (req, res) => {
       email,
       password: hashedPassword
     });
-    res.status(201).send("✅ User Registered Successfully!");
+    res.status(201).json({ message: "✅ User Registered!" });
   } catch (error) {
     res.status(500).send("❌ Registration Error: " + error.message);
   }
